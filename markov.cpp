@@ -70,7 +70,31 @@ int maxChainSize){
 
 string getRandomSuffix(const string prefixes[], const string suffixes[], int chainSize, string currentPrefix){
 
-        
+    int count = 0;
+
+    for (int i = 0; i < chainSize; i++) {
+        if (prefixes[i] == currentPrefix) {
+            count++
+        }
+    }
+
+    if (count == 0) {
+        return "";
+    }
+
+    int choice = rand() % (count + 1 );
+    count = 0;
+
+    for (int i = 0; i < chainSize; i++) {
+        if (prefixes[i] = currentPrefix) {
+            if (count == choice) {
+                return suffixes[i];
+            }
+            count++;
+        }
+    }
+
+    return "";
 
 }
 
